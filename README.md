@@ -1,3 +1,20 @@
+# Estruturas de Dados em Java
+
+## Índice
+
+- [LinkedList](#linkedlist)
+  - [Descrição](#descrição-do-linkedlist)
+  - [Vantagens](#vantagens-do-linkedlist)
+  - [Desvantagens](#desvantagens-do-linkedlist)
+  - [Funcionalidades](#funcionalidades-do-linkedlist)
+  - [Como Usar](#como-usar-o-linkedlist)
+- [Stack](#stack)
+  - [Descrição](#descrição-do-stack)
+  - [Vantagens](#vantagens-do-stack)
+  - [Desvantagens](#desvantagens-do-stack)
+  - [Funcionalidades](#funcionalidades-do-stack)
+  - [Como Usar](#como-usar-o-stack)
+
 # LinkedList
 
 ## Descrição
@@ -61,5 +78,62 @@ public class Main {
         list.print(); // Imprime todos os elementos da lista
         list.remove(1); // Remove o segundo elemento
         list.print(); // Imprime todos os elementos da lista
+    }
+}
+```
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Stack
+
+## Descrição
+
+Este projeto implementa uma estrutura de dados de Pilha (Stack) em Java. Uma pilha é uma coleção linear de elementos que segue o princípio LIFO (Last In, First Out), onde o último elemento inserido é o primeiro a ser removido. Esta implementação inclui operações básicas como adicionar, remover, obter e imprimir elementos da pilha.
+
+## Vantagens
+
+1. **Estrutura dinâmica**
+   - A pilha pode crescer e diminuir conforme necessário, sem a necessidade de realocar ou reorganizar a memória como acontece em arrays.
+
+2. **Eficiente na resolução de problemas LIFO**
+   - Pilhas são especialmente eficientes para resolver problemas que requerem acesso aos elementos na ordem inversa de sua inserção, como na avaliação de expressões aritméticas e na implementação de chamadas recursivas.
+
+3. **Simplicidade na implementação**
+   - A estrutura de pilha é simples de implementar e utilizar, com operações de inserção (push) e remoção (pop) realizadas em tempo constante O(1).
+
+## Desvantagens
+
+1. **Subutilização de Espaço**
+   - Se a pilha for alocada com mais espaço do que o necessário, pode haver desperdício de memória, especialmente se a pilha não utilizar toda a capacidade alocada.
+
+2. **Overflow da Pilha**
+   - Se a pilha atingir sua capacidade máxima, não será possível adicionar mais elementos, o que pode causar um erro de estouro de pilha (stack overflow). Este problema é mais comum em pilhas implementadas com um tamanho fixo.
+
+## Funcionalidades
+
+- **Adicionar elementos**
+  - `push(int value)`: Adiciona um novo elemento ao topo da pilha.
+
+- **Remover elementos**
+  - `pop()`: Remove e retorna o elemento do topo da pilha.
+
+- **Obter e imprimir elementos**
+  - `getTop()`: Imprime o elemento no topo da pilha.
+  - `getHeight()`: Imprime a altura da pilha.
+  - `print()`: Imprime todos os elementos da pilha.
+
+## Como Usar
+
+Para utilizar esta implementação de pilha, você pode criar uma instância da classe `Stack` e usar seus métodos para manipular a pilha. Aqui está um exemplo simples:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Stack stack = new Stack(5); // Cria uma nova pilha com um elemento inicial
+        stack.push(10); // Adiciona um novo elemento ao topo da pilha
+        stack.push(15); // Adiciona outro elemento ao topo da pilha
+        stack.print(); // Imprime todos os elementos da pilha
+        stack.pop(); // Remove o elemento do topo da pilha
+        stack.getTop(); // Imprime o elemento no topo da pilha
+        stack.getHeight(); // Imprime a altura da pilha
     }
 }
