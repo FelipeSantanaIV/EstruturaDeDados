@@ -14,6 +14,12 @@
   - [Desvantagens](#desvantagens-do-stack)
   - [Funcionalidades](#funcionalidades-do-stack)
   - [Como Usar](#como-usar-o-stack)
+ - [Queue](#queue)
+   - [Descrição](#descrição-do-stack)
+   - [Vantagens](#vantagens-do-stack)
+   - [Desvantagens](#desvantagens-do-stack)
+   - [Funcionalidades](#funcionalidades-do-stack)
+   - [Como Usar](#como-usar-o-stack)
 
 # LinkedList
 
@@ -135,5 +141,80 @@ public class Main {
         stack.pop(); // Remove o elemento do topo da pilha
         stack.getTop(); // Imprime o elemento no topo da pilha
         stack.getHeight(); // Imprime a altura da pilha
+    }
+}
+```
+
+# Queue
+
+## Descrição
+
+Este projeto implementa uma estrutura de dados de Fila (Queue) em Java. Uma fila é uma coleção linear de elementos que segue o princípio FIFO (First-In-First-Out), onde o primeiro elemento inserido é o primeiro a ser removido. Esta implementação inclui operações básicas como adicionar, remover, obter e imprimir elementos da fila.
+
+## Vantagens
+
+1. **Organização e Previsibilidade**
+   - Seguindo o princípio FIFO (First-In-First-Out), as filas garantem que os elementos sejam processados na ordem exata em que foram adicionados, o que é ideal para tarefas como gerenciamento de tarefas e processamento de pedidos.
+
+2. **Eficiência em Operações Específicas**
+   - As filas são eficientes para operações de adição e remoção de elementos, pois não requerem deslocamento de outros elementos, ao contrário de listas ou arrays.
+
+3. **Facilidade de Uso**
+   - A interface Queue em Java fornece métodos claros e simples para operações comuns de fila, como `offer()`, `poll()` e `peek()`, facilitando a implementação e manutenção do código.
+
+4. **Flexibilidade de Implementação**
+   - Java oferece várias implementações de filas, como LinkedList e ArrayDeque, permitindo escolher a implementação mais adequada com base nas necessidades de desempenho e memória do seu aplicativo.
+
+5. **Aplicações em Algoritmos**
+   - Filas são essenciais em algoritmos de busca em largura (BFS) e em cenários onde é necessário manter uma lista de elementos a serem processados.
+
+6. **Concorrência**
+   - Algumas implementações de fila em Java são projetadas para serem thread-safe, o que é crucial para aplicações multithread onde vários threads podem estar adicionando ou removendo elementos simultaneamente.
+
+## Desvantagens
+
+1. **Acesso Aleatório Lento**
+   - Ao contrário de arrays ou listas, as filas não oferecem acesso rápido a elementos no meio da estrutura. Se você precisar acessar um elemento que não seja o primeiro, terá que remover todos os elementos anteriores.
+
+2. **Consumo de Memória Adicional**
+   - Implementações de fila como LinkedList podem consumir mais memória devido ao armazenamento de ponteiros adicionais para cada elemento, o que pode ser um problema em ambientes com memória limitada.
+
+3. **Capacidade Limitada**
+   - Se estiver usando uma implementação de fila com capacidade limitada, como ArrayDeque, você pode enfrentar problemas de estouro de fila se não gerenciar cuidadosamente o tamanho da fila.
+
+4. **Dificuldade em Lidar com Prioridades**
+   - Filas padrão não lidam com prioridades. Se sua aplicação requer processamento de elementos com diferentes níveis de prioridade, você precisará de uma fila de prioridades ou outra estrutura de dados.
+
+5. **Concorrência**
+   - Se estiver trabalhando em um ambiente multithread, você precisará garantir que sua fila seja thread-safe, o que pode exigir implementações adicionais ou o uso de classes de fila específicas que suportam concorrência.
+
+## Funcionalidades
+
+- **Adicionar elementos**
+  - `enqueue(int value)`: Adiciona um novo elemento ao final da fila.
+
+- **Remover elementos**
+  - `dequeue()`: Remove e retorna o primeiro elemento da fila.
+
+- **Obter e imprimir elementos**
+  - `getFirst()`: Imprime o primeiro elemento da fila.
+  - `getLast()`: Imprime o último elemento da fila.
+  - `getLength()`: Imprime o comprimento da fila.
+  - `print()`: Imprime todos os elementos da fila.
+
+## Como Usar
+
+Para utilizar esta implementação de fila, você pode criar uma instância da classe `Queue` e usar seus métodos para manipular a fila. Aqui está um exemplo simples:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Queue queue = new Queue(5); // Cria uma nova fila com um elemento inicial
+        queue.enqueue(10); // Adiciona um novo elemento ao final da fila
+        queue.enqueue(15); // Adiciona outro elemento ao final da fila
+        queue.print(); // Imprime todos os elementos da fila
+        queue.dequeue(); // Remove o primeiro elemento da fila
+        queue.getFirst(); // Imprime o primeiro elemento da fila
+        queue.getLength(); // Imprime o comprimento da fila
     }
 }
